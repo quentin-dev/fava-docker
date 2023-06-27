@@ -28,7 +28,7 @@ ARG BEANCOUNT_VERSION
 
 RUN apt-get update
 RUN apt-get install -y build-essential libxml2-dev libxslt-dev curl \
-        python3 libpython3-dev python3-pip git python3-venv
+    python3 libpython3-dev python3-pip git python3-venv
 
 
 ENV PATH "/app/bin:$PATH"
@@ -44,7 +44,7 @@ RUN git checkout ${BEANCOUNT_VERSION}
 RUN CFLAGS=-s pip3 install -U /tmp/build/beancount
 RUN pip3 install -U /tmp/build/fava
 ADD requirements.txt .
-RUN pip3 install --require-hashes -U -r requirements.txt
+RUN pip3 install -U -r requirements.txt
 
 RUN pip3 uninstall -y pip
 
