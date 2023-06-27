@@ -8,12 +8,12 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - 'master'
+      - 'acceptance'
       - 'devel'
       - 'v*'
   pull_request:
     branches:
-      - 'master'
+      - 'acceptance'
 
 jobs:
   push_to_registry:
