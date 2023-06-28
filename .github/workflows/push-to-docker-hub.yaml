@@ -43,6 +43,7 @@ jobs:
           images: sunbr0/summit-fava-docker
           tags: |
             type=raw,value=latest,enabled={{is_default_branch}}
+            type=raw,value={{github.sha}},enabled={{is_default_branch}}
             type=ref,event=branch,enabled={{!is_default_branch}}
             type=ref,event=pr
 
